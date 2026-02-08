@@ -132,3 +132,51 @@ python joint_monkey.py
 ```
 
 ![image](isaacgym.png)
+
+then run the code following the readme of Paper:
+```
+cd parkou-main/rsl_rl
+pip install -e
+```
+
+```
+cd ../legged_gym && pip install -e .
+```
+then when i run the train.py it went wrong
+
+i meet some problems:The GPU model, Python version, and PyTorch version used by the author are inconsistent with mine, and I have struggled for a long time with attempts to resolve compatibility issues and switch versions.But failed
+
+some bugs are like followings:
+
+```
+ImportError: /home/fengjiacheng/miniconda3/envs/rlgpu/lib/python3.7/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent
+```
+ 
+i tried to update lib and Temporarily disable Intel JIT environment variables also make sure my CUDA and NIVIDA is correct
+but still
+
+```
+undefined symbol: iJIT_NotifyEvent
+```
+
+then chage envirment paramaters
+
+```
+export LIB_PATH=$(find /lib /usr/lib -name "libstdc++.so.6" 2>/dev/null | head -1)
+export LD_PRELOAD=$LIB_PATH
+export DISABLE_JIT_PROFILING=1
+export INTEL_JIT_DEBUG=0
+```
+also with some attempt to correct path
+
+not work
+
+then reinstall envirment totally
+
+author said py 3.8 will work in pytorch 2.4.1 but actually it didnt work in my 5070ti,havnt figured out the reason.
+
+```
+ERROR: No matching distribution found for torch==2.4.1
+WARNING: There was an error checking the latest version of pip.
+```
+**Then,more attempts with different pytorch version and py version,still not work:)**
