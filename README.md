@@ -72,3 +72,63 @@ Then I found 3 papers，they have codes that looks like I can reproduce:
 **[4]**.Smith L, Kew J C, Li T, et al. Learning and adapting agile locomotion skills by transferring experience[J]. arXiv preprint arXiv:2304.09834, 2023.
 
 To prevent the code from becoming outdated or incorrect, I selected 3, 2 of which can be used as an alternative.
+
+firstly i choose Zhuang Z, Fu Z, Wang J, et al. Robot parkour learning[J]. arXiv preprint arXiv:2309.05665, 2023.
+
+Its open-sourced code in https://github.com/ZiwenZhuang/parkour/tree/main
+
+#### System and environment configuration before the experiment：
+
+I installed the Ubuntu Linux system on my computer using a USB drive.
+
+Install the latest version of Python.
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3
+```
+
+Install isaacgym:
+
+Unzip the compressed file isaacgym
+
+```
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+```
+restart shell
+
+```
+~/miniconda3/bin/conda init bash
+```
+
+restart shell
+
+```
+~/miniconda3/bin/conda init zsh
+```
+
+```
+cd /<my document...>/isaacgym/python/
+bash ../create_conda_env_rlgpu.sh
+```
+run virtual environment
+
+```
+conda activate rlgpu
+```
+
+```
+pip install -e .
+```
+
+Running Example
+
+```
+cd examples 
+python joint_monkey.py
+```
+
+![image](isaacgym.png)
