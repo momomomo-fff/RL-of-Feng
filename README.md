@@ -1,7 +1,7 @@
 # Works for application
 ## Topic: <br>&ensp;*Rl for locomotion sim2realgap energy-efficient locomotion,hierarchical systems,and physically-consistent pipelines*
 ## My main references (reviews):<br>
-1.W. Zhu, X. Guo, D. Owaki, K. Kutsuzawa and M. Hayashibe, <<A Survey of Sim-to-Real Transfer Techniques Applied to Reinforcement Learning for Bioinspired Robots,>> in IEEE Transactions on Neural Networks and Learning Systems, vol. 34, no. 7, pp. 3444-3459, July 2023, doi: 10.1109/TNNLS.2021.3112718.
+**[1]**.W. Zhu, X. Guo, D. Owaki, K. Kutsuzawa and M. Hayashibe, <<A Survey of Sim-to-Real Transfer Techniques Applied to Reinforcement Learning for Bioinspired Robots,>> in IEEE Transactions on Neural Networks and Learning Systems, vol. 34, no. 7, pp. 3444-3459, July 2023, doi: 10.1109/TNNLS.2021.3112718.
 https://ieeexplore.ieee.org/document/9552429
 
 **My conclusions and understandings about it:**
@@ -57,8 +57,18 @@ Dowdy, Jordan, and Jean Chagas Vaz. "Isaac Sim-to-Real: Reinforcement Learning b
 
 Chaoxia, Chenyu, et al. "Sim-to-real transfer of automatic extinguishing strategy for firefighting robots." IEEE Robotics and Automation Letters (2024).
 
-**After a brief reading, I found that none of them had open-source code.**
+After a brief reading, I found that ***none of them had open-source code***.
 
-**Then I then found a website that allows me to better view the relevance of related papers, using graphs for easier reference: Connected Papers https://www.connectedpapers.com/**
+Then I then found a website that allows me to better view the relevance of related papers, using graphs for easier reference: Connected Papers https://www.connectedpapers.com/
 
 ![image](connectedpapers.png)
+
+Then I found 3 papers，they have codes that looks like I can reproduce:
+
+**[2]**.Cheng X, Shi K, Agarwal A, et al. Extreme parkour with legged robots[C]//2024 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2024: 11443-11450.
+
+**[3]**.Zhuang Z, Fu Z, Wang J, et al. Robot parkour learning[J]. arXiv preprint arXiv:2309.05665, 2023.
+
+**[4]**.Smith L, Kew J C, Li T, et al. Learning and adapting agile locomotion skills by transferring experience[J]. arXiv preprint arXiv:2304.09834, 2023.
+
+To prevent the code from becoming outdated or incorrect, I selected 3, 2 of which can be used as an alternative.
