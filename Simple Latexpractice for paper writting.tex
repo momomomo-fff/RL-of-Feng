@@ -1,0 +1,153 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage{amsmath, amsthm, amssymb, graphicx,indentfirst,bm} % Required for inserting images
+\newtheorem{theorem}{theory}[section]
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+
+\usepackage{geometry}
+\geometry{left=2.54cm,right=2.54cm,top=3.18cm,bottom=3.18cm}
+
+\linespread{1.5}
+
+\pagenumbering{roman}
+
+\setcounter{page}{0}
+
+\title{Practice}
+\author{FengJiacheng}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+\subsection{first subsection}
+first subsection
+
+\subsection{sec subsection}
+second subsection
+
+\subsection{fig}
+this is fig.1
+
+this is fig.1
+
+htbp rules for selecting the best place for a picture automatically
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=8cm]{12.png}
+    \caption{Model 1}
+\end{figure}
+
+\subsection{Form}
+this is form
+
+this is form
+\begin{table}[htbp]
+\centering
+\caption{form 1}
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    1 &   &   &     \\ \hline
+      & 1 &   &     \\ \hline
+      &   & 1 &     \\ \hline
+      &   &   & 1   \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{List}
+this is a list,enumerate is the list with order
+
+this is a list,enumerate is the list with order
+
+\begin{enumerate}
+    \item this is the first point;
+    \item this is the second point;
+    \item this is the third point;
+\end{enumerate}
+
+Also some other types.
+
+\begin{enumerate}
+    \item[(1)] first; 
+    \item[/2/] second;
+    \item[[3]] third;
+\end{enumerate}
+
+\subsection{theory}
+\begin{theorem}[moll]
+Some Theories
+
+\subsection{fomula}
+$a>0$,$b>0$,so$a+b>0$
+
+$\displaystyle\lim_{n\to\infty}x_n=x$
+
+If $a>0$,$b>0$,so:
+\[
+a+b>0
+\]
+
+up mark and down mark:
+\[
+A^2 \quad \text{and} \quad A_2
+\]
+
+and \quad $\dfrac{a}{b}$
+
+also \quad $c^\frac{a}{b}$
+
+kuohao$(1+a)$
+
+large kuohao $\left(1+\dfrac{1}{n}\right)^n$
+
+highlight \bm{$a>0$}
+
+long kuohao 
+\[
+f(x)=
+\begin{cases}
+x,  &  x>0,\\
+-x, &  x<0.
+\end{cases}
+\]
+
+multies rows:
+\[
+\begin{aligned}
+    a & =b+c\\
+      & =d+e
+\end{aligned}
+\]
+
+matrix environments bmatrix and pmatrix:
+\[
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+\]
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
