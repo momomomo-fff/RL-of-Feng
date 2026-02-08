@@ -61,7 +61,7 @@ After a brief reading, I found that ***none of them had open-source code***.
 
 Then I then found a website that allows me to better view the relevance of related papers, using graphs for easier reference: Connected Papers https://www.connectedpapers.com/
 
-![image](connectedpapers.png)
+![image](pictures/connectedpapers.png)
 
 Then I found 3 papers，they have codes that looks like I can reproduce:
 
@@ -131,7 +131,7 @@ cd examples
 python joint_monkey.py
 ```
 
-![image](isaacgym.png)
+![image](pictures/isaacgym.png)
 
 then run the code following the readme of Paper:
 ```
