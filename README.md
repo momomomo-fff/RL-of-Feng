@@ -180,3 +180,20 @@ ERROR: No matching distribution found for torch==2.4.1
 WARNING: There was an error checking the latest version of pip.
 ```
 **Then,more attempts with different pytorch version and py version,still not work:)**
+
+Then i change it to another paper:Cheng X, Shi K, Agarwal A, et al. Extreme parkour with legged robots[C]//2024 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2024: 11443-11450.
+
+following the explainations:https://github.com/chengxuxin/extreme-parkour
+
+i rest the envirments,but still some problems with GPU,but **this time the python version and torch version that the author given is suitiable**,so this time i choose the cpu and declear the trainning times from 5000 to 300 to simply check the results.
+
+in legged_robot_config.py
+```
+class runner
+ policy_class_name = 'ActorCritic'
+ algorithm_class_name = 'PPO'
+ num_steps_per_env = 24 # per iteration
+ max_iterations = 300 #number of policy updates #50000
+ # logging
+ save_interval = 10 # check for potential saves every this many iterations #100
+```
