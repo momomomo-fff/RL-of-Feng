@@ -200,3 +200,7 @@ class runner
 #### Now just focus on 1 idea: 
 
 #### If put the robot that trained in simulator in real world,with different envirments such as Friction,will the robot perferm different？bad or good？
+
+after set a small size of trainning 300 times , the robot failed to pass
+
+#### I want to compare the impact of different physical parameter constraints on the performance of the trained robot.
