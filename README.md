@@ -197,3 +197,6 @@ class runner
  # logging
  save_interval = 10 # check for potential saves every this many iterations #100
 ```
+#### Now just focus on 1 idea: 
+
+#### If put the robot that trained in simulator in real world,with different envirments such as Friction,will the robot perferm different？bad or good？
