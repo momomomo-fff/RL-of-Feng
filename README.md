@@ -204,3 +204,5 @@ class runner
 after set a small size of trainning 300 times , the robot failed to pass
 
 #### I want to compare the impact of different physical parameter constraints on the performance of the trained robot.
+
+When attempting to increase the training quantity to 2000 for the second time, I found that using the CPU was too slow. Therefore, I tried the latest version adapted to my graphics card environment. I eventually discovered that I needed to update to the latest version of isaacgym. However, the author's code project had only been tested on an older version of isaacgym. To avoid spending a lot of time reconfiguring and then encountering bugs due to version upgrades, I decided to change the references and find another paper to reproduce the issue. (10/2 pm 2:44)
