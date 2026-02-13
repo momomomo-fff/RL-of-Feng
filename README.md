@@ -206,3 +206,18 @@ after set a small size of trainning 300 times , the robot failed to pass
 #### I want to compare the impact of different physical parameter constraints on the performance of the trained robot.
 
 When attempting to increase the training quantity to 2000 for the second time, I found that using the CPU was too slow. Therefore, I tried the latest version adapted to my graphics card environment. I eventually discovered that I needed to update to the latest version of isaacgym. However, the author's code project had only been tested on an older version of isaacgym. To avoid spending a lot of time reconfiguring and then encountering bugs due to version upgrades, I decided to change the references and find another paper to reproduce the issue. (10/2 pm 2:44)
+
+After meeting problems with finding some good papers with good opne-sourced codes,i change my mind,i begin to find some good open-sourced codes with good papers,then i used the Hugging Face with key words Rl sim2real control robot,then i found a good github project:https://github.com/rohanpsingh/LearningHumanoidWalking/  with this project,there is 3 papers presneted,all focued on the hunman robot rl control,i think this research is realy suitibale for my work,the followings:
+Code for the papers:
+- [**Robust Humanoid Walking on Compliant and Uneven Terrain with Deep Reinforcement Learning**](https://ieeexplore.ieee.org/abstract/document/10769793)
+[Rohan P. Singh](https://rohanpsingh.github.io), [Mitsuharu Morisawa](https://unit.aist.go.jp/jrl-22022/en/members/member-morisawa.html), [Mehdi Benallegue](https://unit.aist.go.jp/jrl-22022/en/members/member-benalleguem.html), [Zhaoming Xie](https://zhaomingxie.github.io/), [Fumio Kanehiro](https://unit.aist.go.jp/jrl-22022/en/members/member-kanehiro.html)
+
+- [**Learning Bipedal Walking for Humanoids with Current Feedback**](https://arxiv.org/pdf/2303.03724.pdf)
+[Rohan P. Singh](https://rohanpsingh.github.io), [Zhaoming Xie](https://zhaomingxie.github.io/), [Pierre Gergondet](https://unit.aist.go.jp/jrl-22022/en/members/member-gergondet.html), [Fumio Kanehiro](https://unit.aist.go.jp/jrl-22022/en/members/member-kanehiro.html)
+
+- [**Learning Bipedal Walking On Planned Footsteps For Humanoid Robots**](https://arxiv.org/pdf/2207.12644.pdf)
+[Rohan P. Singh](https://rohanpsingh.github.io), [Mehdi Benallegue](https://unit.aist.go.jp/jrl-22022/en/members/member-benalleguem.html), [Mitsuharu Morisawa](https://unit.aist.go.jp/jrl-22022/en/members/member-morisawa.html), [Rafael Cisneros](https://unit.aist.go.jp/jrl-22022/en/members/member-cisneros.html), [Fumio Kanehiro](https://unit.aist.go.jp/jrl-22022/en/members/member-kanehiro.html)
+
+And i choose the () one
+
+with the uv package manager,it is more easy to biuld the environments,using the mujoco simulator.
