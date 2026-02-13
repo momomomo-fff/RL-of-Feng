@@ -221,3 +221,5 @@ Code for the papers:
 And i choose the () one
 
 with the uv package manager,it is more easy to biuld the environments,using the mujoco simulator.
+
+![image](pictures/cartpole.png)
