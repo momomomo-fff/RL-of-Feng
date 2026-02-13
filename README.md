@@ -222,4 +222,6 @@ And i choose the () one
 
 with the uv package manager,it is more easy to biuld the environments,using the mujoco simulator.
 
+simple example test with 500 iterations,swing the pole from hanging down to balancing upright.
+
 ![image](pictures/cartpole.png)
