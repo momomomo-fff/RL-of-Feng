@@ -225,3 +225,10 @@ with the uv package manager,it is more easy to biuld the environments,using the 
 simple example test with 500 iterations,swing the pole from hanging down to balancing upright.
 
 ![image](pictures/cartpole.png)
+
+
+then i train the standing model,it takes 3 hours using cpu(cant use gpu because of version conflict of torch and gpu):
+
+results are like this:
+
+![image](pictures/standing.png)
