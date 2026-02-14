@@ -227,8 +227,15 @@ simple example test with 500 iterations,swing the pole from hanging down to bala
 ![image](pictures/cartpole.png)
 
 
-then i train the standing model,it takes 3 hours using cpu(cant use gpu because of version conflict of torch and gpu):
+then i train the **standing** model,it takes 3 hours using cpu(cant use gpu because of version conflict of torch and gpu):
 
 results are like this:
 
 ![image](pictures/standing.png)
+
+When I ran the H1 task in the open-source code I pulled, it showed that there was no menagerie. After checking, I found that I needed to pull the mujoco library resources.
+
+```
+cd models
+git clone https://github.com/google-deepmind/mujoco_menagerie.git
+```
