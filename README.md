@@ -239,3 +239,19 @@ When I ran the H1 task in the open-source code I pulled, it showed that there wa
 cd models
 git clone https://github.com/google-deepmind/mujoco_menagerie.git
 ```
+
+but problems with task jvcr_step
+
+```
+File "/home/fengjiacheng/1/LearningHumanoidWalking/rl/algos/ppo.py", line 312, in update_actor_critic
+    clip_fraction = torch.mean((torch.abs(ratio - 1) > self.clip).float()).item()
+KeyboardInterrupt
+```
+
+problems with task jvcr_walk
+
+```
+RuntimeError: expected m1 and m2 to have the same dtype, but got: float != double
+```
+
+So just try to do someting with H1 task
