@@ -255,3 +255,24 @@ RuntimeError: expected m1 and m2 to have the same dtype, but got: float != doubl
 ```
 
 So just try to do someting with H1 task
+
+**!! finally find the solution of the Bug，Start by modifying wrappers.py:**
+
+```
+def mirror_clock_observation(self, obs):
+        matrix = self.obs_mirror_matrix.to(device=obs.device, dtype=obs.dtype)
+        # matrix = self.obs_mirror_matrix.to(obs.device)
+```
+
+```
+def mirror_observation(self, obs):
+        matrix = self.obs_mirror_matrix.to(device=obs.device, dtype=obs.dtype)
+        # matrix = self.obs_mirror_matrix.to(obs.device)
+```
+
+```
+def mirror_action(self, action):
+        matrix = self.act_mirror_matrix.to(device=action.device, dtype=action.dtype)
+        # matrix = self.act_mirror_matrix.to(action.device)
+        return action @ matrix
+```
