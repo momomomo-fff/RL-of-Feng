@@ -276,3 +276,7 @@ def mirror_action(self, action):
         # matrix = self.act_mirror_matrix.to(action.device)
         return action @ matrix
 ```
+
+the results are shown:
+
+![image](pictures/walk.png)
