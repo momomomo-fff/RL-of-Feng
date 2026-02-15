@@ -254,9 +254,9 @@ problems with task jvcr_walk
 RuntimeError: expected m1 and m2 to have the same dtype, but got: float != double
 ```
 
-So just try to do someting with H1 task
+So just try to do someting with H1 task(14/2 Pm)
 
-**!! finally find the solution of the Bug，Start by modifying wrappers.py:**
+**!! finally find the solution of the Bug，Start by modifying wrappers.py:**(15/2 Am.)
 
 ```
 def mirror_clock_observation(self, obs):
