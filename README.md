@@ -280,3 +280,5 @@ def mirror_action(self, action):
 the results are shown:
 
 ![image](pictures/walk.png)
+
+and the motion video is in pictures file.
