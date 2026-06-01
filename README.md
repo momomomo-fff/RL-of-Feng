@@ -1,5 +1,6 @@
 # Works
-##Topic: <br>&ensp;*RL Robot Control*
+## Topic:  
+*RL Robot Control*
 ## My main references (reviews):<br>
 **[1]**.W. Zhu, X. Guo, D. Owaki, K. Kutsuzawa and M. Hayashibe, <<A Survey of Sim-to-Real Transfer Techniques Applied to Reinforcement Learning for Bioinspired Robots,>> in IEEE Transactions on Neural Networks and Learning Systems, vol. 34, no. 7, pp. 3444-3459, July 2023, doi: 10.1109/TNNLS.2021.3112718.
 https://ieeexplore.ieee.org/document/9552429
