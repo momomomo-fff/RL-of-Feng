@@ -37,17 +37,43 @@ These levels can be explicitly separated or partly integrated into a single poli
 | Generate, Track, Improve [14] | September 2026 | Generative planning and RL | Depth-conditioned flow matching, tracking policy, off-policy fine-tuning | Outdoor G1 locomotion with multiple skills |
 | iGPC [17] | October 2026 | Motor priors and perceptive contact interaction | Retain the GPC backbone; task adaptation, perceptive distillation, input calibration | G1 target contact, support-assisted stabilization, and box pushing; no execution-time motion reference |
 
+> **Method diagrams (added October 12, 2026):** Original method pipeline or model architecture figures from all 16 papers above appear after their corresponding discussions. Images are stored locally in `assets/paper-pipelines/`; source links identify the paper version and figure number. Image rights remain with the original authors. The reading guides are commentary provided by this survey. Each image uses the version identified in its citation; this addition does not constitute a new verification of the survey text.
+
 ## 3. From Agile Motion to General Whole-Body Control
 
 ### 3.1 SoloParkour and PIE
 
 SoloParkour [2] formulates quadruped parkour as constrained RL. A policy first learns with privileged environmental information. Its experience then bootstraps an off-policy algorithm trained from depth images, which is deployed on Solo-12. Its value lies in incorporating physical limits and the cost of visual learning into the training design. PIE [3] uses implicit–explicit estimation to improve the interpretation of proprioceptive state and environmental information, and demonstrates hardware transfer after a single simulation training stage.
 
+**SoloParkour method diagram**
+
+![SoloParkour method pipeline (original paper, Figure 3)](assets/paper-pipelines/soloparkour.png)
+
+*Source: [SoloParkour, arXiv 2409.13678v1, Figure 3](https://arxiv.org/html/2409.13678v1#S3.F3).*
+
+Reading guide: A privileged policy is trained first, and its experience then supports depth-based visual policy learning. Both stages incorporate constraints.
+
+**PIE method diagram**
+
+![PIE method pipeline (original paper, Figure 2)](assets/paper-pipelines/pie.png)
+
+*Source: [PIE, arXiv 2408.13740v3, Figure 2](https://arxiv.org/html/2408.13740v3#S2.F2).*
+
+Reading guide: Proprioceptive history and depth images enter an estimator that extracts implicit and explicit state information for the policy.
+
 ### 3.2 ASAP: Using Real Data to Improve Simulation Training
 
 ASAP [4] first learns a tracking policy in simulation using retargeted human motions. It then collects real execution data and trains a residual action model to compensate for dynamics mismatch. This model is incorporated into simulation before the control policy is fine-tuned.
 
 The compensation incorporates information learned from real executions, which distinguishes it from standard domain randomization. This approach is relevant to tracking errors caused by actuators, contacts, and other modeling inaccuracies. Reproduction requires attention to real-data collection and hardware availability.
+
+**ASAP method diagram**
+
+![ASAP method pipeline (original paper, Figure 2)](assets/paper-pipelines/asap.png)
+
+*Source: [ASAP, arXiv 2502.01143v3, Figure 2](https://arxiv.org/html/2502.01143v3#S0.F2).*
+
+Reading guide: Pretraining and real-world trajectory collection precede residual action model learning, followed by policy fine-tuning in the corrected simulator.
 
 ### 3.3 Distinguishing GMT, BeyondMimic, BFM, and SONIC
 
@@ -60,6 +86,38 @@ The compensation incorporates information learned from real executions, which di
 
 BeyondMimic addresses both motion acquisition and downstream task control. The initial BFM work uses a CVAE and masked online distillation. SONIC combines scaled motion tracking with a unified interface; its official page also demonstrates kinematic planning and integration with higher-level models. Together, these works advance reusable whole-body control. Demonstration videos alone, however, do not establish reliability across terrain or during long-horizon tasks.
 
+**GMT method diagram**
+
+![GMT method pipeline (original paper, Figure 3)](assets/paper-pipelines/gmt.png)
+
+*Source: [GMT, arXiv 2506.14770v2, Figure 3](https://arxiv.org/html/2506.14770v2#S3.F3).*
+
+Reading guide: Adaptive motion sampling and a mixture of experts support training, followed by behavior cloning to obtain a student policy.
+
+**BeyondMimic method diagram**
+
+![BeyondMimic method pipeline (original paper, Figure 7)](assets/paper-pipelines/beyondmimic.png)
+
+*Source: [BeyondMimic, arXiv 2508.08241v4, Figure 7](https://arxiv.org/html/2508.08241v4#Sx3.F7).*
+
+Reading guide: Motion-tracking policies are distilled into a latent space and used for diffusion modeling, with task guidance added at inference time.
+
+**BFM method diagram**
+
+![BFM method pipeline (original paper, Figure 2)](assets/paper-pipelines/bfm.png)
+
+*Source: [BFM, arXiv 2509.13780v1, Figure 2](https://arxiv.org/html/2509.13780v1#S3.F2).*
+
+Reading guide: Retargeted data trains a proxy policy; a unified control interface, input masking, and CVAE distillation form the behavior model.
+
+**SONIC method diagram**
+
+![SONIC method pipeline (original paper, Figure 6)](assets/paper-pipelines/sonic.png)
+
+*Source: [SONIC, arXiv 2511.07820v4, Figure 6](https://arxiv.org/html/2511.07820v4#S3.F6).*
+
+Reading guide: Specialized encoders map different motion sources to a universal token used by the motion and control decoders.
+
 ## 4. Key Developments in 2026
 
 ### 4.1 RGMT: Robust Tracking with Imperfect References
@@ -68,15 +126,39 @@ RGMT [9] uses recent proprioceptive information, a causal temporal encoder, and 
 
 The authors report approximately 3.5 hours of motion data, single-stage training without distillation, and transfer to unseen motions and physical hardware. The reported data volume describes the reference-motion collection; it does not imply low total interaction volume or GPU cost.
 
+**RGMT method diagram**
+
+![RGMT method pipeline (original paper, Figure 2)](assets/paper-pipelines/rgmt.png)
+
+*Source: [RGMT, arXiv 2601.23080v1, Figure 2](https://arxiv.org/html/2601.23080v1#S1.F2).*
+
+Reading guide: Proprioceptive history provides dynamics information that is combined with a reference-motion window to produce actions suited to the current state.
+
 ### 4.2 Walk the PLANC: Giving RL a Physical Planning Structure
 
 PLANC [10] targets constrained footholds such as stepping stones and narrow boards. A reduced-order gait planner supplies dynamically consistent targets, while CLF rewards guide RL training, followed by hardware validation.
 
 This offers a research entry point for someone with a control background: retain an interpretable planning structure and use RL to improve adaptation to errors and complex dynamics. The use of CLF rewards alone does not justify a claim of global stability for the complete learned system. Such a claim requires examining the theoretical assumptions and scope of the proofs.
 
+**Walk the PLANC method diagram**
+
+![Walk the PLANC method pipeline (original paper, Figure 2)](assets/paper-pipelines/planc.png)
+
+*Source: [Walk the PLANC, arXiv 2601.06286v1, Figure 2](https://arxiv.org/html/2601.06286v1#S1.F2).*
+
+Reading guide: A reduced-order model provides references and CLF rewards. Teacher training, student distillation, and fine-tuning precede deployment.
+
 ### 4.3 Scaling BFM: Jointly Scaling Motion Diversity, Interaction Data, and Model Structure
 
 Scaling BFM [11] emphasizes three coordinated design choices: global-frame behavior tracking, matching on-policy rollout volume to reference-motion diversity, and the Humanoid Transformer. It highlights the distinction between the size of the reference dataset and the amount of actual RL interaction data.
+
+**Scaling BFM method diagram**
+
+![Scaling BFM method pipeline (original paper, Figure 3)](assets/paper-pipelines/scaling-bfm.png)
+
+*Source: [Scaling BFM, arXiv 2607.15163v1, Figure 3](https://arxiv.org/html/2607.15163v1#S3.F3).*
+
+Reading guide: Different control goals form task tokens that interact with state and action context through the Humanoid Transformer. This is a model architecture diagram.
 
 ### 4.4 PGMT: Allowing Motion Adjustments for Terrain
 
@@ -86,6 +168,14 @@ Part of the permitted adaptation is explicitly defined: on slopes, stairs, and b
 
 The controller's scope is to coordinate terrain-aware execution of a supplied motion intent. The paper already demonstrates stair climbing with simultaneous upper-body teleoperation, so adding that combination alone is insufficient novelty. Elevation maps mainly represent geometry and provide limited understanding of object semantics and interaction purposes. Evaluation should measure both traversal and motion preservation.
 
+**PGMT method diagram**
+
+![PGMT method pipeline (original paper, Figure 2)](assets/paper-pipelines/pgmt.png)
+
+*Source: [PGMT, arXiv 2609.08511v2, Figure 2](https://arxiv.org/html/2609.08511v2#S1.F2).*
+
+Reading guide: Motion tracking and recovery are learned first, followed by terrain perception. Multiple critic heads support training, while the actor handles execution.
+
 ### 4.5 PASSAGE and Generate, Track, Improve: Training Planners with Closed-Loop RL Feedback
 
 PASSAGE [13] uses 100 hours of scene-aligned human motion from 1,500 scenes to train a conditional flow-matching planner, combined with a perceptive tracker and planner RL post-training. Its onboard system is tested in 50 unseen real layouts, emphasizing geometry-dependent selection and composition of whole-body traversal behaviors.
@@ -93,6 +183,22 @@ PASSAGE [13] uses 100 hours of scene-aligned human motion from 1,500 scenes to t
 Generate, Track, Improve [14] generates whole-body references from depth images, executes them with a perceptive RL tracking policy, and improves the generator through off-policy RL. The authors report increases in traversal success of up to 25 percentage points under some test conditions and demonstrate outdoor G1 locomotion with multiple skills. This is an internal experimental result and should not be directly compared with success rates from different papers and test sets.
 
 Both works point to a research direction in which planners learn from execution feedback which motions the current controller can reliably complete, in addition to fitting demonstrations.
+
+**PASSAGE method diagram**
+
+![PASSAGE method pipeline (original paper, Figure 2)](assets/paper-pipelines/passage.png)
+
+*Source: [PASSAGE, arXiv 2609.18732v1, Figure 2](https://arxiv.org/html/2609.18732v1#S2.F2).*
+
+Reading guide: Scene-aligned data, a multi-layer elevation map, a flow-matching motion generator, and a perceptive tracker support closed-loop execution.
+
+**Generate, Track, Improve method diagram**
+
+![Generate, Track, Improve method pipeline (original paper, Figure 2)](assets/paper-pipelines/generate-track-improve.png)
+
+*Source: [Generate, Track, Improve, arXiv 2609.31577v1, Figure 2](https://arxiv.org/html/2609.31577v1#S2.F2).*
+
+Reading guide: A motion library supports training of the tracker and flow-matching generator; closed-loop execution feedback then fine-tunes the generator.
 
 ### 4.6 ULTRA: One Policy for Motion Tracking and Visual Goal Execution
 
@@ -102,6 +208,14 @@ Training proceeds through physically consistent retargeting, a tracking teacher 
 
 Experiments include changes in object scale and goal position, as well as composed motions. These results do not substitute for a test that explicitly excludes selected combinations of simultaneous constraints from training. ULTRA combines learned motor capabilities with perception more broadly; it should not be characterized as ViBe-style adaptation with a frozen motor backbone and only trainable adapters.
 
+**ULTRA method diagram**
+
+![ULTRA method pipeline (original paper, Figure 2)](assets/paper-pipelines/ultra.png)
+
+*Source: [ULTRA, arXiv 2603.03279v2, Figure 2](https://arxiv.org/html/2603.03279v2#S2.F2).*
+
+Reading guide: Physics-based retargeting, a tracking teacher, multimodal student learning, and deployment form the pipeline. The student accepts perception and goals at different levels of density.
+
 ### 4.7 ViBe: Freezing the Motor Backbone and Learning Visual Corrections
 
 ViBe [16] reuses the SONIC whole-body tracker and a pretrained vision encoder, freezes both, and trains a visual extractor and LoRA adapters with PPO. The controller receives proprioceptive history, a reference-motion window, onboard RGB images, and an optional task command. Visual feedback directly affects actions, enabling adjustments to footholds, contact placement, or avoidance behavior.
@@ -110,6 +224,14 @@ The architecture and training recipe are shared, but separate adapted policies a
 
 ViBe directly establishes a precedent for combining a frozen pretrained motor backbone, pretrained vision, and RL adaptation of a small number of modules. Sharing an adaptation module across tasks and generalizing to unseen task combinations require separate validation.
 
+**ViBe method diagram**
+
+![ViBe method pipeline (original paper, Figure 2)](assets/paper-pipelines/vibe.png)
+
+*Source: [ViBe, arXiv 2609.09918v1, Figure 2](https://arxiv.org/html/2609.09918v1#S2.F2).*
+
+Reading guide: A visual extractor reads features from a frozen vision encoder and uses LoRA to adapt a frozen motion tracker. Adaptation is performed separately for different tasks.
+
 ### 4.8 iGPC: Retaining a Generative Motor Backbone for Perceptive Interaction
 
 iGPC [17] learns task adapters around GPC's motor-token representation, generative prior, and action decoder, adding conditioning on object-surface geometry, contact, and stability. Interaction experts learn target contact, environmental support, and object pushing without prescribed motion references during execution.
@@ -117,6 +239,14 @@ iGPC [17] learns task adapters around GPC's motor-token representation, generati
 A perceptive student reconstructs the expert's inputs from depth, LiDAR, and proprioceptive history. Distillation supervises motor tokens and joint targets, followed by bounded input calibration and RL fine-tuning of task adapters. The motor backbone and decoder are retained rather than replaced by a new action network.
 
 Tasks still use task adapters; sharing a backbone does not establish unseen-combination generalization with a unified policy. The paper uses Isaac Lab and MuJoCo in some student box-pushing evaluations, which does not mean all training is conducted in MuJoCo. Broader generalization and contact-safety evaluation remain future directions identified by the authors.
+
+**iGPC method diagram**
+
+![iGPC method pipeline (original paper, Figure 2)](assets/paper-pipelines/igpc.png)
+
+*Source: [iGPC, arXiv 2610.08120v1, Figure 2](https://arxiv.org/html/2610.08120v1#S2.F2).*
+
+Reading guide: Interaction experts are trained around the motor backbone, followed by perceptive student distillation, input calibration, and task-adapter fine-tuning.
 
 ### 4.9 Interfaces and Generalization Boundaries of the Four Works
 
