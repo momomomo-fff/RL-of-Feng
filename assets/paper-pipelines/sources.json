@@ -1,0 +1,189 @@
+[
+  {
+    "name": "soloparkour",
+    "file": "soloparkour.png",
+    "source_url": "https://arxiv.org/html/2409.13678v1#S3.F3",
+    "image_url": "https://arxiv.org/html/2409.13678v1/Method.png",
+    "figure_id": "S3.F3",
+    "version": "2409.13678v1",
+    "width": 1652,
+    "height": 509
+  },
+  {
+    "name": "pie",
+    "file": "pie.png",
+    "source_url": "https://arxiv.org/html/2408.13740v3#S2.F2",
+    "image_url": "https://arxiv.org/html/2408.13740v3/Figure_2.png",
+    "figure_id": "S2.F2",
+    "version": "2408.13740v3",
+    "width": 1840,
+    "height": 756,
+    "extraction": "PDF figure region rendered at 288 dpi, opaque white background; no content redrawn",
+    "pdf_url": "https://arxiv.org/pdf/2408.13740v3",
+    "pdf_page": 3,
+    "pdf_crop_points": [
+      80,
+      48,
+      540,
+      237
+    ]
+  },
+  {
+    "name": "asap",
+    "file": "asap.png",
+    "source_url": "https://arxiv.org/html/2502.01143v3#S0.F2",
+    "image_url": "https://arxiv.org/html/2502.01143v3/ASAP_pipeline-crop.png",
+    "figure_id": "S0.F2",
+    "version": "2502.01143v3",
+    "width": 1067,
+    "height": 462
+  },
+  {
+    "name": "gmt",
+    "file": "gmt.png",
+    "source_url": "https://arxiv.org/html/2506.14770v2#S3.F3",
+    "image_url": "https://arxiv.org/html/2506.14770v2/method_v3.png",
+    "figure_id": "S3.F3",
+    "version": "2506.14770v2",
+    "width": 1594,
+    "height": 725
+  },
+  {
+    "name": "beyondmimic",
+    "file": "beyondmimic.png",
+    "source_url": "https://arxiv.org/html/2508.08241v4#Sx3.F7",
+    "image_url": "https://arxiv.org/html/2508.08241v4/Fig7.png",
+    "figure_id": "Sx3.F7",
+    "version": "2508.08241v4",
+    "width": 1764,
+    "height": 1781
+  },
+  {
+    "name": "bfm",
+    "file": "bfm.png",
+    "source_url": "https://arxiv.org/html/2509.13780v1#S3.F2",
+    "image_url": "https://arxiv.org/html/2509.13780v1/bfm_main_fig_new.png",
+    "figure_id": "S3.F2",
+    "version": "2509.13780v1",
+    "width": 946,
+    "height": 490
+  },
+  {
+    "name": "sonic",
+    "file": "sonic.png",
+    "source_url": "https://arxiv.org/html/2511.07820v4#S3.F6",
+    "image_url": "https://arxiv.org/html/2511.07820v4/fig6_method_overview.png",
+    "figure_id": "S3.F6",
+    "version": "2511.07820v4",
+    "width": 2033,
+    "height": 682
+  },
+  {
+    "name": "rgmt",
+    "file": "rgmt.png",
+    "source_url": "https://arxiv.org/html/2601.23080v1#S1.F2",
+    "image_url": "https://arxiv.org/html/2601.23080v1/WBC.png",
+    "figure_id": "S1.F2",
+    "version": "2601.23080v1",
+    "width": 1202,
+    "height": 757
+  },
+  {
+    "name": "planc",
+    "file": "planc.png",
+    "source_url": "https://arxiv.org/html/2601.06286v1#S1.F2",
+    "image_url": "https://arxiv.org/html/2601.06286v1/Figures/arch_diagram.png",
+    "figure_id": "S1.F2",
+    "version": "2601.06286v1",
+    "width": 4296,
+    "height": 1308
+  },
+  {
+    "name": "scaling-bfm",
+    "file": "scaling-bfm.png",
+    "source_url": "https://arxiv.org/html/2607.15163v1#S3.F3",
+    "image_url": "https://arxiv.org/html/2607.15163v1/arch.png",
+    "figure_id": "S3.F3",
+    "version": "2607.15163v1",
+    "width": 1912,
+    "height": 1532,
+    "extraction": "PDF figure region rendered at 288 dpi, opaque white background; no content redrawn",
+    "pdf_url": "https://arxiv.org/pdf/2607.15163v1",
+    "pdf_page": 9,
+    "pdf_crop_points": [
+      72,
+      72,
+      550,
+      455
+    ]
+  },
+  {
+    "name": "pgmt",
+    "file": "pgmt.png",
+    "source_url": "https://arxiv.org/html/2609.08511v2#S1.F2",
+    "image_url": "https://arxiv.org/html/2609.08511v2/MotionTracker.png",
+    "figure_id": "S1.F2",
+    "version": "2609.08511v2",
+    "width": 1275,
+    "height": 514
+  },
+  {
+    "name": "passage",
+    "file": "passage.png",
+    "source_url": "https://arxiv.org/html/2609.18732v1#S2.F2",
+    "image_url": "https://arxiv.org/html/2609.18732v1/PASSAGE_publish.png",
+    "figure_id": "S2.F2",
+    "version": "2609.18732v1",
+    "width": 2000,
+    "height": 1125
+  },
+  {
+    "name": "generate-track-improve",
+    "file": "generate-track-improve.png",
+    "source_url": "https://arxiv.org/html/2609.31577v1#S2.F2",
+    "image_url": "https://arxiv.org/html/2609.31577v1/architecture.png",
+    "figure_id": "S2.F2",
+    "version": "2609.31577v1",
+    "width": 1999,
+    "height": 950
+  },
+  {
+    "name": "ultra",
+    "file": "ultra.png",
+    "source_url": "https://arxiv.org/html/2603.03279v2#S2.F2",
+    "image_url": "https://arxiv.org/html/2603.03279v2/method_new.png",
+    "figure_id": "S2.F2",
+    "version": "2603.03279v2",
+    "width": 2039,
+    "height": 1174
+  },
+  {
+    "name": "vibe",
+    "file": "vibe.png",
+    "source_url": "https://arxiv.org/html/2609.09918v1#S2.F2",
+    "image_url": "https://arxiv.org/html/2609.09918v1/approach.png",
+    "figure_id": "S2.F2",
+    "version": "2609.09918v1",
+    "width": 1191,
+    "height": 645
+  },
+  {
+    "name": "igpc",
+    "file": "igpc.png",
+    "source_url": "https://arxiv.org/html/2610.08120v1#S2.F2",
+    "image_url": "https://arxiv.org/html/2610.08120v1/method_overview.png",
+    "figure_id": "S2.F2",
+    "version": "2610.08120v1",
+    "width": 2040,
+    "height": 1172,
+    "extraction": "PDF figure region rendered at 288 dpi, opaque white background; no content redrawn",
+    "pdf_url": "https://arxiv.org/pdf/2610.08120v1",
+    "pdf_page": 4,
+    "pdf_crop_points": [
+      45,
+      43,
+      555,
+      336
+    ]
+  }
+]
